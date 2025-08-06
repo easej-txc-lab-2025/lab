@@ -97,7 +97,67 @@ You should now have two VS Code instances, one for working on the `src` repo and
 
 
 
-# Configure Service Instance - 10m
+# Configure the EASeJ Service Instance
+
+1. In a browser, access your EASeJ instance using the URL provided by the instructors.  You will need to use your instructor provided web mail account for 2-factor authentication.
+2. Once signed click on `Open dashboard`
+<img width="596" height="259" alt="image" src="https://github.com/user-attachments/assets/78c1c44d-e8ab-4759-9817-3d03018866ed" />
+
+3. Review and click through the introductory screens, for example:
+<img width="585" height="515" alt="image" src="https://github.com/user-attachments/assets/e16e36fd-a4fb-4760-a901-7ffe2c88ceec" />
+
+4. Click `Install and configure` to begin the setup process
+<img width="393" height="296" alt="image" src="https://github.com/user-attachments/assets/0260ede4-47b0-44ce-85dc-18abc603bd34" />
+
+5. EASeJ provides built-in build and deploy pipelines. If you already have a build pipeline, you can use EASeJ's "Deploy and run your application" option. In this lab you will use both pipelines, so select the `Build, deploy and run your application` option and click `Next`
+<img width="602" height="320" alt="image" src="https://github.com/user-attachments/assets/e9909416-a60f-45f0-bd16-23969fba22c7" />
+
+6. EASeJ's build and deploy pipelines are driven by events from GitHub.  To set up this integration, you need to authorize EASeJ to access GitHub.  EASeJ only limited GitHub access. Click `Authorize Access to GitHub`
+<img width="600" height="322" alt="image" src="https://github.com/user-attachments/assets/3afa05a3-194a-42e4-9fb1-1a03079e5ef6" />
+
+7. A GitHub page will pop up asking you to authorize EASeJ. This GitHub page is using the GitHub account you are already signed in with.  Click `Authorize IBM Enterprise Application Service`
+<img width="477" height="516" alt="image" src="https://github.com/user-attachments/assets/08e09255-1c7e-4d66-a538-96003bf64696" />
+
+8. You should see that authorization was successful.  Click `Next` to proceed
+<img width="603" height="313" alt="image" src="https://github.com/user-attachments/assets/de606ba3-4ccb-402b-ae72-7cb619fa63ee" />
+
+9. Next you'll select the github organization where the src and cfg repos reside.  Choose what should be the only option, which is your GitHub id
+<img width="600" height="309" alt="image" src="https://github.com/user-attachments/assets/395873e2-2265-4996-9f45-f33f68a3945e" />
+   
+10. A dialog will appear asking you to install the EASeJ GitHub App.  This app is the thing that lives in GitHub and provides the integration between GitHub and EASeJ.  Click `Install GitHub App`
+<img width="595" height="281" alt="image" src="https://github.com/user-attachments/assets/6d453a43-6770-4229-a8ce-bd6e6e0701e1" />
+
+11. Another GitHub page will appear to ask which repositories the EASeJ GitHub App should have access to.  You could pick the specific src and cfg repositories, but to keep things simple leave as `All repositories` and click `Install`.  If prompted to, log in with your lab GitHub password.
+<img width="379" height="517" alt="image" src="https://github.com/user-attachments/assets/69eda77f-8321-4dc0-a362-f74de9eb727f" />
+
+12. You should see that the app install was successful.  Click `Next` to proceed.
+<img width="602" height="312" alt="image" src="https://github.com/user-attachments/assets/c37c160b-6074-4a08-8918-6a32b2421ddf" />
+
+13. Next you'll tell EASeJ which repository contains the source code.  Select `mod-resorts-src` and click `Next`
+<img width="600" height="313" alt="image" src="https://github.com/user-attachments/assets/b741a462-1dfb-468a-a55b-77cdd179751d" />
+
+14. Now tell EASeJ which repository contains the deployment configuration.  Select `mod-resorts-cfg` and click `Next`
+<img width="606" height="311" alt="image" src="https://github.com/user-attachments/assets/fd4acbe5-4778-4dd2-92d4-5937e60c24aa" />
+
+15. Review the settings and click `Finish` followed by `Confirm` on the dialog.
+<img width="607" height="309" alt="image" src="https://github.com/user-attachments/assets/6f649db6-85f6-48b1-8e4c-6a36ae29f883" />
+
+16. You will be automatically take to the EASeJ dashboard that looks like this
+<img width="599" height="330" alt="image" src="https://github.com/user-attachments/assets/ff6718b1-a95e-478d-ab6c-78bd0b412069" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Familiarize with the UI - WalkMe + anything not covered by WalkMe (use this to capture new WalkMe requirements) - 5m
 
