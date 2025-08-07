@@ -145,6 +145,55 @@ You should now have two VS Code instances, one for working on the `src` repo and
 16. You will be automatically take to the EASeJ dashboard that looks like this
 <img width="599" height="330" alt="image" src="https://github.com/user-attachments/assets/ff6718b1-a95e-478d-ab6c-78bd0b412069" />
 
+# Familiarize yourself with the EASeJ UI 
+
+The dashboard is the place that summarizes the status of your application and its delivery.  At the top you'll see information on the GitHub configuration:
+
+<img width="596" height="174" alt="image" src="https://github.com/user-attachments/assets/675f51dc-a377-4ce3-99ff-69627c72e510" />
+
+Below that are Actions.  Actions are steps EASeJ recommends you take to ensure your applications is in good shape.  This may be empty, but if the initial release build (more on this in a minute) has completed, you'll see an action like this.  
+
+<img width="571" height="286" alt="image" src="https://github.com/user-attachments/assets/d53dd0ad-ff99-45c8-9cc8-2469fbc219b6" />
+
+This action is just to help you get started with EASeJ so it not essential, but EASeJ Actions beyond this are strong recommendations. 
+
+Further down the page you will see the two built-in environments where the application runs; Production, and Stating.  They are in this order because Production is more important.  In fact, the whole Dashboard is ordered in this way.  We haven't deployed anything yet, so there's not a lot to see.
+
+<img width="597" height="145" alt="image" src="https://github.com/user-attachments/assets/29435fb5-25bb-42cd-8419-27bd1197d36d" />
+
+Scrolling down will show the `Deployment jobs`. These are the deployment pipeline jobs run to deploy a release build to staging or production.  By default, Production deployment jobs are show, but you can click `Staging` to switch to Staging.  Again, we haven't deployed anything so there's nothing to see.
+
+<img width="597" height="216" alt="image" src="https://github.com/user-attachments/assets/44ac46d5-1d5c-471d-a30b-5389f719186e" />
+
+At the bottom of the dashboard are Release Builds.  EASeJ automatically starts a Release Build after initial setup using the contents of the source repository.  If the bar is blue, then the build is in progress.  Once successfully completed, the bar turns green.  Hoverring over the bar shows a summary of the build, including tests.
+
+<img width="597" height="326" alt="image" src="https://github.com/user-attachments/assets/69574339-9e67-4ed4-88e1-712024c06396" />
+
+Each Dashboard tile links to the details for the things it represents.  Also, clicking on the green (or blue) Release Build bar takes you to the Release Build details page.  One that page, you can view the build log, test results, and download the artefacts produced by the build.
+
+<img width="599" height="276" alt="image" src="https://github.com/user-attachments/assets/d31102f3-4dee-4a11-b51a-5b607a1971f2" />
+
+Clicking on `Enterprise Application Service for Java` brings you back to the Dashboard
+
+<img width="488" height="250" alt="image" src="https://github.com/user-attachments/assets/bf17ec86-bff9-4fa7-a7e8-fd131c10483f" />
+
+Lastly, to see all the UI features available, you can click on the hamburger menu
+
+<img width="486" height="253" alt="image" src="https://github.com/user-attachments/assets/34d6b397-3b02-4e74-96d1-a50e61fac1cd" />
+
+And this will display a menu of all the EASeJ options:
+
+<img width="274" height="505" alt="image" src="https://github.com/user-attachments/assets/7adf2a17-a07b-412f-9f7f-0b149d5a5f0d" />
+
+You'll see that there are more options displayed than are on the dashboard.  These are:
+* `Home`: returns to the dashboard
+* `Pull request builds`: view builds initiated by a pull request being created in the source repository
+* `Config validation`: view config validations initiated by a pull request being created in the configuration repository
+* `Secrets`: provides built-in secrets management.
+* `Integrations`: provides assitance in integration with Db2, MQ, on-premise systems, external logs and monoitoring.
+* `Settings` (partially obscured at the bottom): shows service configuration information and enables updating, for example, repository integrations.
+
+  
 
 
 
@@ -158,8 +207,6 @@ You should now have two VS Code instances, one for working on the `src` repo and
 
 
 
-
-# Familiarize with the UI - WalkMe + anything not covered by WalkMe (use this to capture new WalkMe requirements) - 5m
 
 # Make an application change and test locally - Start VS Code, Dev Mode, code change, see results, run tests, etc - 10m
 
