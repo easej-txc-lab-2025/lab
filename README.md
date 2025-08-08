@@ -193,22 +193,18 @@ You'll see that there are more options displayed than are on the dashboard.  The
 * `Integrations`: provides assitance in integration with Db2, MQ, on-premise systems, external logs and monoitoring.
 * `Settings` (partially obscured at the bottom): shows service configuration information and enables updating, for example, repository integrations.
 
-  
+
+# Make an application change and test locally
+
+You're now going to act as a developer for the application.  In this section, you'll develop and test a change locally, and in subsequent sections, you'll deliver the code and eventually deploy the updated application it to an environment.
+
+1. In your VS Code instance that's opened with the source code, open the `Explorer` view, if it's not already, and expand the `LIBERTY DASHBOARD` accordion.  You should see `moderesorts` listed.
+<img width="345" height="491" alt="image" src="https://github.com/user-attachments/assets/db5449fb-5e96-4288-81f5-22ebbbddd3f8" />
+
+2. Right click on `modresorts` to bring up the context menu and choose `start`.  This will start Liberty locally in what is called `Dev Mode`.  Dev Mode makes it really quick and easy to develop applications because it does TODO....
+<img width="340" height="461" alt="image" src="https://github.com/user-attachments/assets/023582d0-9b19-47e8-9806-213f1334c93f" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# Make an application change and test locally - Start VS Code, Dev Mode, code change, see results, run tests, etc - 10m
 
 # Create a pull-request to test in EASeJ - commit change, create PR, go see the build, view tests, etc.  - 10m
 
