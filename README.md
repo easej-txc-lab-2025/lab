@@ -229,10 +229,9 @@ You're now going to act as a developer for the application.  In this section, yo
 3. In the modresort browser tab, reload the page with `Ctrl-R` and expand `Where to?` to see the new destination.  Note, to make this update, all you did was modify the source.  You didn't have to run a new build, package the app, restart the server.  Dev Mod handled the update for you.  This was a static file change, but if it had been a Java change, Dev Mod would have handled it the same. It's that easy.
 <img width="315" height="376" alt="image" src="https://github.com/user-attachments/assets/e3f1c807-8db0-4769-ade8-6121e3f95213" />
 
+# Create a pull-request to build and test in EASeJ
 
-
-
-# Create a pull-request to test in EASeJ - commit change, create PR, go see the build, view tests, etc.  - 10m
+You've completed the development and tested locally, next you want to build and test the update in EASeJ before the code is integrated into the main branch.
 
 # Merge pull-request to deliver, build, and test change - merge PR, go see the build, view test results, etc.
 
