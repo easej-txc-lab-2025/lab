@@ -196,6 +196,8 @@ You'll see that there are more options displayed than are on the dashboard.  The
 
 # Make an application change and test locally
 
+## Start Dev Mod and review the app
+
 You're now going to act as a developer for the application.  In this section, you'll develop and test a change locally, and in subsequent sections, you'll deliver the code and eventually deploy the updated application it to an environment.
 
 1. In your VS Code instance that's opened with the source code, open the `Explorer` view, if it's not already, and expand the `LIBERTY DASHBOARD` accordion.  You should see `moderesorts` listed.
@@ -203,6 +205,30 @@ You're now going to act as a developer for the application.  In this section, yo
 
 2. Right click on `modresorts` to bring up the context menu and choose `start`.  This will start Liberty locally in what is called `Dev Mode`.  Dev Mode makes it really quick and easy to develop applications because it does TODO....
 <img width="340" height="461" alt="image" src="https://github.com/user-attachments/assets/023582d0-9b19-47e8-9806-213f1334c93f" />
+
+3. In the terminal tab, you'll see a maven build runs that download and installs Liberty (just the features used by the app), builds the modresorts app, and then starts the server with the app deployed.  Once complete you should see a screen like this:
+<img width="959" height="276" alt="image" src="https://github.com/user-attachments/assets/406740b6-3b04-480c-b03f-07c2e7e53817" />
+
+4. Hovver over the URL in the message that begins with `Web application available...` and press `Ctrl-Click`.  This will bring up a dialog, choose `Open`.
+<img width="595" height="189" alt="image" src="https://github.com/user-attachments/assets/c71b92f3-75c1-4efc-98eb-2aab8ac75f24" />
+
+5. You will see the modresorts app load in a new browser tab.
+<img width="1383" height="597" alt="image" src="https://github.com/user-attachments/assets/1ede5dd6-f4ca-4027-a715-bd99da7cd914" />
+
+6. Expand the "Where to?" to see the list of destinations.  You're going to add a new destination to the app.
+<img width="327" height="343" alt="image" src="https://github.com/user-attachments/assets/cfc33d72-58fb-4fcc-a421-bef2003bef68" />
+
+## Update the app
+
+1. In the VS Code IDE for mod-resorts-src, expand `WebContent` and click on `index.html` to open it for editing.  Scroll about of quarter of the way down the file to where the destinations are listed
+<img width="723" height="285" alt="image" src="https://github.com/user-attachments/assets/99580da4-2952-404b-a8f9-02d1c03b504f" />
+
+2. Add a new destination, e.g. `<option value="Orlando">Orlando, USA</option>` and save the file with `Ctrl-S`
+<img width="595" height="233" alt="image" src="https://github.com/user-attachments/assets/3caf06b1-2188-4fc9-b5b0-0179d281650b" />
+
+3. In the modresort browser tab, reload the page with `Ctrl-R` and expand `Where to?` to see the new destination.  Note, to make this update, all you did was modify the source.  You didn't have to run a new build, package the app, restart the server.  Dev Mod handled the update for you.  This was a static file change, but if it had been a Java change, Dev Mod would have handled it the same. It's that easy.
+<img width="315" height="376" alt="image" src="https://github.com/user-attachments/assets/e3f1c807-8db0-4769-ade8-6121e3f95213" />
+
 
 
 
