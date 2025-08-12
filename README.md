@@ -168,7 +168,7 @@ Below that are Actions.  Actions are steps EASeJ recommends you take to ensure y
 
 This action is just to help you get started with EASeJ so it not essential, but EASeJ Actions beyond this are strong recommendations. 
 
-Further down the page you will see the two built-in environments where the application runs; Production, and Stating.  They are in this order because Production is more important.  In fact, the whole Dashboard is ordered in this way.  We haven't deployed anything yet, so there's not a lot to see.
+Further down the page you will see the two built-in environments where the application runs; Production, and Staging.  They are in this order because Production is more important.  In fact, the whole Dashboard is ordered in this way.  We haven't deployed anything yet, so there's not a lot to see.
 
 <img width="597" height="145" alt="image" src="https://github.com/user-attachments/assets/29435fb5-25bb-42cd-8419-27bd1197d36d" />
 
