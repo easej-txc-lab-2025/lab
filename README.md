@@ -40,6 +40,7 @@ In these steps you'll create the Mod Resorts source and configuration repositori
 ```
 git config --global user.name "YOUR GITHUB NAME"
 git config --global user.email "EMAILID@wweasej.com"
+```
 
 ## Fork the source and config repositories
 
