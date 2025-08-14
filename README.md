@@ -70,7 +70,7 @@ Cloning the source and configuration repositories copies them to the Lab VM so y
 2. On the Welcome page, choose `Clone Git Repository...`
 <img width="370" height="428" alt="image" src="https://github.com/user-attachments/assets/82c4a97f-47cb-44b7-bb46-bc01e5a74a1c" />
 
-3. Enter the URL for the source repository into the command field - https://github.com/easej-txc-lab-2025/mod-resorts-src and choose `Clone from GitHub`
+3. Enter the URL for the source repository into the command field - https://github.com/YOUR_GITHUB_ID/mod-resorts-src (remembering to replace `YOUR_GITHUB_ID` and choose `Clone from GitHub`
 <img width="584" height="98" alt="image" src="https://github.com/user-attachments/assets/982c3bae-669a-4b85-9f75-93ff020d80ce" />
 
 4. Follow the step to authorize VS Code to access github under your github id, which end with this final confirmation.  Click `Authorize Visual-Studio-Code`
@@ -83,12 +83,13 @@ Cloning the source and configuration repositories copies them to the Lab VM so y
 <img width="495" height="53" alt="image" src="https://github.com/user-attachments/assets/9d9e1435-bf83-4525-b784-09e38b0baf72" />
 
 7. Choose `Open in New Window` to open a new VS Code window to work in
-8. <img width="562" height="152" alt="image" src="https://github.com/user-attachments/assets/23fbe429-b11a-43b4-8ce0-b2c42f034969" />
+<img width="562" height="152" alt="image" src="https://github.com/user-attachments/assets/23fbe429-b11a-43b4-8ce0-b2c42f034969" />
+
 
 ### Clone the configuration repository
 
 1. On the Welcome page of the **first VS Code window**, choose `Clone Git Repository...`.
-2. Enter the URL for the config repository into the command field - https://github.com/easej-txc-lab-2025/mod-resorts-cfg and choose `Clone from GitHub`
+2. Enter the URL for the config repository into the command field - https://github.com/YOUR_GITHUB_ID/mod-resorts-cfg (remembering to replace `YOUR_GITHUB_ID`) and choose `Clone from GitHub`
 
 3. Select the `mod-resorts-cfg` repository from the list
 <img width="582" height="134" alt="image" src="https://github.com/user-attachments/assets/a1771c3b-a458-41b3-b8ef-93616e0f81da" />
@@ -109,6 +110,8 @@ Unfortunately, the VS Code installation in the VM is missing a plugin so we need
 <img width="429" height="363" alt="image" src="https://github.com/user-attachments/assets/2a6c8ddb-de74-4c5e-a2e1-3c30a48c8300" />
 
 # Configure the EASeJ Service Instance
+
+TODO: Update these instructions to go via https://cloud.ibm.com and then select their correct instance.  This avoid the long URLs.
 
 1. In a browser, access your EASeJ instance using the URL provided by the instructors.  You will need to use your instructor provided web mail account for 2-factor authentication.
 2. Once signed click on `Open dashboard`
@@ -233,6 +236,25 @@ You're now going to act as a developer for the application.  In this section, yo
 
 When working in teams it's a best practice to use a code branch to keep your changes separate and then deliver them when ready.  Teams would typicaly do this via a pull-request so you can have EASeJ validate your code changes, and then have another team member review the changes, and approve and merge them.  So before modifying the app, you're going to create a branch for your work.
 
+To make the next few steps a bit simpler, we're going to do them in the GitHub terminal.  
+
+1. Open the terminal by choose `View` > `Terminal`
+<img width="395" height="430" alt="image" src="https://github.com/user-attachments/assets/e27f59ba-52a5-4ab0-bccd-ff281f6fbc34" />
+
+2. In the terminal window, do the following commands:
+```
+git branch dev
+git switch dev
+git remote remove upstream
+```
+
+3. Click on `Publish Branch` to publish the branch to GitHub.  Ignore the notification to create a pull request.
+<img width="419" height="216" alt="image" src="https://github.com/user-attachments/assets/c33d4159-534a-41f2-8dcb-270f213e6ac2" />
+
+TODO: tidy this up
+
+
+
 1. Click on the `Source Control` Icon and then under `Graph`, `Right-click` and choose `Create Branch...`.  Give the branch the name `dev` and press `Enter`
 <img width="420" height="440" alt="image" src="https://github.com/user-attachments/assets/e4d503fd-de23-4b00-859d-d64e58d5fc6a" />
 
@@ -269,8 +291,20 @@ You've completed the development and tested locally, next you want to build and 
 3. `Right-click` on index.html to bring up the context menu and choose `Stage Changes`
 <img width="370" height="382" alt="image" src="https://github.com/user-attachments/assets/56f0c43c-c32f-4b1c-abc6-3cdb2ea7d339" />
 
+4. Expand the `Commit` options and choose `Commit & Create Pull Request`
+<img width="597" height="342" alt="image" src="https://github.com/user-attachments/assets/4b15e50c-4a26-4527-9609-4b05e33c1a7d" />
 
+5. An editor will appear for you to enter the commit message.  Type a meaningful message, e.g. "Added Orlando" and save with `Ctrl-S`.  
+<img width="599" height="279" alt="image" src="https://github.com/user-attachments/assets/c880ef21-9eb8-4ee5-83a1-47d90f648844" />
 
+6. Close the commit message file by clicking the "X"
+<img width="431" height="156" alt="image" src="https://github.com/user-attachments/assets/9b3c5cda-9df3-4f6b-ace6-895b6ee36c3c" />
+
+7. You will now see a summary of the pull request.  It will show that code is to be merged from `YOUR_GITHUB_ID/dev` to `YOUR_GITHUB_ID/main`.  Click the `Create` button.
+<img width="293" height="434" alt="image" src="https://github.com/user-attachments/assets/e03c8edc-a90e-42e8-b166-c16791f05410" />
+
+8. A new tab will open showing the created pull request.  EASeJ will not kick of a "Pull Request Build" to build and test the update.
+<img width="594" height="372" alt="image" src="https://github.com/user-attachments/assets/5f2c6841-9a94-4eaa-8e39-24902f341f61" />
 
 
 # Merge pull-request to deliver, build, and test change - merge PR, go see the build, view test results, etc.
