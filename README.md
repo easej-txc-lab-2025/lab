@@ -37,12 +37,14 @@ In these steps you'll create the Mod Resorts source and configuration repositori
 2. In a browser, sign in to the email account provided by the instructors at https://login.one.com/mail.  This will be used for 2-factor authentication when signing into GitHub
 3. In a second browser tab, sign into https://github.com with the ID provided by the instructors.  Use the code sent to the email account to complete the sign-in.
 4. In a terminal window, set the git user.name and user.password using the following commands:
+
+TODO: Work out if this is needed and where it goes.  It has to be after the OAuth login in VS Code....
 ```
 git config --global user.name "YOUR GITHUB NAME"
 git config --global user.email "EMAILID@wweasej.com"
 ```
 
-## Fork the source and config repositories
+## Fork the mod-resorts-src and mod-resorts-cfg repositories
 
 Pre-populated source and configuration repositories are provided.  You need to fork them into your github account to use them separate from the other lab participants.
 
@@ -67,22 +69,25 @@ Cloning the source and configuration repositories copies them to the Lab VM so y
 
 1. Start Visual Studio Code by clicking on `Activities` and `Show Applications` and choosing the VS Code icon.
 
-2. On the Welcome page, choose `Clone Git Repository...`
+2. **Install VS Code Plug for GitHub Pull Requests:** Unfortunately, the VS Code installation in the VM is missing a plugin so we need to install it. In VS Code, select the plugins Icon, filter for `GitHub`, and click `Install` for the `GitHub Pull Requests` plugin.
+<img width="429" height="363" alt="image" src="https://github.com/user-attachments/assets/2a6c8ddb-de74-4c5e-a2e1-3c30a48c8300" />
+
+3. On the Welcome page, choose `Clone Git Repository...`
 <img width="370" height="428" alt="image" src="https://github.com/user-attachments/assets/82c4a97f-47cb-44b7-bb46-bc01e5a74a1c" />
 
-3. Enter the URL for the source repository into the command field - https://github.com/YOUR_GITHUB_ID/mod-resorts-src (remembering to replace `YOUR_GITHUB_ID` and choose `Clone from GitHub`
+4. Enter the URL for the source repository into the command field - https://github.com/YOUR_GITHUB_ID/mod-resorts-src (remembering to replace `YOUR_GITHUB_ID` and choose `Clone from GitHub`
 <img width="584" height="98" alt="image" src="https://github.com/user-attachments/assets/982c3bae-669a-4b85-9f75-93ff020d80ce" />
 
-4. Follow the step to authorize VS Code to access github under your github id, which end with this final confirmation.  Click `Authorize Visual-Studio-Code`
+5. Follow the step to authorize VS Code to access github under your github id, which end with this final confirmation.  Click `Authorize Visual-Studio-Code`
 <img width="342" height="35" alt="image" src="https://github.com/user-attachments/assets/ab46a671-b2f6-42e1-8f2f-0a79723903b7" />
 
-5. Select the `mod-resorts-src` repository from the list
+6. Select the `mod-resorts-src` repository from the list
 <img width="581" height="131" alt="image" src="https://github.com/user-attachments/assets/a002e222-7448-491d-bba1-4c57a65a82eb" />
 
-6. In the dialog, click `Select as Repository Destination` to clone the repository to the `Home` directory
+7. In the dialog, click `Select as Repository Destination` to clone the repository to the `Home` directory
 <img width="495" height="53" alt="image" src="https://github.com/user-attachments/assets/9d9e1435-bf83-4525-b784-09e38b0baf72" />
 
-7. Choose `Open in New Window` to open a new VS Code window to work in
+8. Choose `Open in New Window` to open a new VS Code window to work in
 <img width="562" height="152" alt="image" src="https://github.com/user-attachments/assets/23fbe429-b11a-43b4-8ce0-b2c42f034969" />
 
 
@@ -100,14 +105,7 @@ Cloning the source and configuration repositories copies them to the Lab VM so y
 5. This time, choose `Open` to open in the same VS Code window to work in
 <img width="564" height="159" alt="image" src="https://github.com/user-attachments/assets/0251e740-16fd-4d69-865c-4b1669687ae4" />
 
-You should now have two VS Code instances, one for working on the `src` repo and the other for working on the `cfg` repo.
-
-## Install VS Code Plug for GitHub Pull Requests
-
-Unfortunately, the VS Code installation in the VM is missing a plugin so we need to install it.
-
-1. In VS Code, select the plugins Icon, filter for `GitHub`, and click `Install` for the `GitHub Pull Requests` plugin.
-<img width="429" height="363" alt="image" src="https://github.com/user-attachments/assets/2a6c8ddb-de74-4c5e-a2e1-3c30a48c8300" />
+You should now have two VS Code instances, one for working on the `mod-resorts-src` repo and the other for working on the `mod-resorts-cfg` repo.
 
 # Configure the EASeJ Service Instance
 
@@ -210,7 +208,7 @@ You'll see that there are more options displayed than are on the dashboard.  The
 
 # Make an application change and test locally
 
-## Start Dev Mod and review the app
+## Start Dev Mode and review the app
 
 You're now going to act as a developer for the application.  In this section, you'll develop and test a change locally, and in subsequent sections, you'll deliver the code and eventually deploy the updated application it to an environment.
 
@@ -232,7 +230,7 @@ You're now going to act as a developer for the application.  In this section, yo
 6. Expand the "Where to?" to see the list of destinations.  You're going to add a new destination to the app.
 <img width="327" height="343" alt="image" src="https://github.com/user-attachments/assets/cfc33d72-58fb-4fcc-a421-bef2003bef68" />
 
-## Create a branch
+## Create a 'dev' branch
 
 When working in teams it's a best practice to use a code branch to keep your changes separate and then deliver them when ready.  Teams would typicaly do this via a pull-request so you can have EASeJ validate your code changes, and then have another team member review the changes, and approve and merge them.  So before modifying the app, you're going to create a branch for your work.
 
@@ -250,19 +248,6 @@ git remote remove upstream
 
 3. Click on `Publish Branch` to publish the branch to GitHub.  Ignore the notification to create a pull request.
 <img width="419" height="216" alt="image" src="https://github.com/user-attachments/assets/c33d4159-534a-41f2-8dcb-270f213e6ac2" />
-
-TODO: tidy this up
-
-
-
-1. Click on the `Source Control` Icon and then under `Graph`, `Right-click` and choose `Create Branch...`.  Give the branch the name `dev` and press `Enter`
-<img width="420" height="440" alt="image" src="https://github.com/user-attachments/assets/e4d503fd-de23-4b00-859d-d64e58d5fc6a" />
-
-2. Click on `Publish Branch` to publish the branch to GitHub
-<img width="419" height="216" alt="image" src="https://github.com/user-attachments/assets/c33d4159-534a-41f2-8dcb-270f213e6ac2" />
-
-3. To make your changes in the branch you need to check it out.  Under `Graph` right-click on `Initial commit..` and choose `Checkout >` > `dev`.
-<img width="596" height="385" alt="image" src="https://github.com/user-attachments/assets/3fb9915d-32a1-4071-a202-d344c4db15ed" />
 
 
 # Update the app
@@ -318,26 +303,47 @@ You've completed the development and tested locally, next you want to build and 
 12. When the build is completed you'll be able to view the logs, tests results and downloads.  You should see that 4 tests were run, and that 3 passed and 1 was skipped.
 <img width="420" height="281" alt="image" src="https://github.com/user-attachments/assets/8ca0d686-9e5c-459e-a2c1-526ab70a33fc" />
 
-11. Click on `IBM Enterprise Application Service for Java" to go back to the EASeJ dashboard
+13. Click on `IBM Enterprise Application Service for Java" to go back to the EASeJ dashboard
 <img width="321" height="71" alt="image" src="https://github.com/user-attachments/assets/4f7f7b38-45af-4a1a-a27c-c040df197175" />
 
 # Merge pull-request to deliver, build, and test change - merge PR, go see the build, view test results, etc.
 
+Your code changes built and passed the tests in EASeJ so it's time to merge the pull request into the main code branch.  A developer would typicall get a peer or team lead to review the pull request and merge it, but in this lab, you'll merge your own pull request.
 
+1. In the VS Code tab for the pull-request, scroll down and click the `Merge Pull Request` button
+<img width="594" height="432" alt="image" src="https://github.com/user-attachments/assets/bd884a60-9252-49d3-8736-3a09319497e5" />
 
-# Update staging config and create pull-request to validate - copy the version, update yaml, commit change, create PR, view config validation
+2. In the same tab, scroll down and click the `Create Merge Commit` button.  This will cause a Release Build to start in EASeJ
+<img width="595" height="422" alt="image" src="https://github.com/user-attachments/assets/24c19fb4-b4a3-43a5-9853-c75c62072bb3" />
 
-To deploy the new release to staging, you need to update the staging `environment.yaml`.  Teams would typicaly do this via a pull-request so you can have EASeJ validate the configuration, and then have another team member review the change, and approva and merge it.  To do this, you'll start by createing a branch in which you'll deliver the confugration change.
+3. In the EASeJ Dashboard, scroll down to the Release Build section and you should see a blue or green bar corresponding to the new build.  You can hover over it to see the details
+<img width="539" height="425" alt="image" src="https://github.com/user-attachments/assets/bf1a3a6b-64bc-4153-95e7-d4dc0716b2e1" />
 
-2. Click on the `Source Control` Icon and then under `Graph`, `Right-click` and choose `Create Branch`.  Give the branch the name `ops` and press `Enter`
-<img width="420" height="440" alt="image" src="https://github.com/user-attachments/assets/e4d503fd-de23-4b00-859d-d64e58d5fc6a" />
+4. Click on the Release Build bar to view the details.  When the build is complete, you can view the logs, test results, and downloads.  Release builds have more artefacts available, including a SLSA provenance file that describes the application Bill of Materials (BOM).  This is useful when trying to determine if the applications is affected by a supply-chain injection attack.
+<img width="473" height="228" alt="image" src="https://github.com/user-attachments/assets/d1704ca6-00c7-417a-82a5-4912559a687d" />
 
-3. Click on `Publish Branch` to publish the branch to GitHub
+You've successfully contributed an update to the application. Next you'll deploy the new release build to the EAseJ Staging environment to verify that it's all working and ready for Production.
+
+# Deploy the release to Staging
+
+## Create an 'ops' branch
+
+To deploy the new release to staging, you need to update the staging `environment.yaml`.  Teams would typicaly do this via a pull-request so you can have EASeJ validate the configuration, and then have another team member review the change, and approval and merge it.  To do this, you'll start by creating a branch in which you'll deliver the configuration change.
+
+To make the next few steps a bit quicker, we're going to do them in the GitHub terminal.  
+
+1. In the **VS Code window for mod-resorts-cfg**, Open the terminal by choose `View` > `Terminal`
+<img width="432" height="448" alt="image" src="https://github.com/user-attachments/assets/33a66dfa-a793-4480-8d75-8e93a0f394c4" />
+
+2. In the terminal window, do the following commands:
+```
+git branch ops
+git switch ops
+git remote remove upstream
+```
+
+3. Click on `Publish Branch` to publish the branch to GitHub.  Ignore the notification to create a pull request.
 <img width="419" height="216" alt="image" src="https://github.com/user-attachments/assets/c33d4159-534a-41f2-8dcb-270f213e6ac2" />
-
-3. To make your changes in the branch you need to check it out.  Under `Graph` right-click on `Initial commit..` and choose `Checkout >` > `ops`.
-<img width="599" height="378" alt="image" src="https://github.com/user-attachments/assets/af2db433-579a-49d7-9593-f6e4d7b9b13a" />
-
 
 # Merge pull-request to deploy to staging - merge PR, view deployment job, see results
 
