@@ -303,9 +303,23 @@ You've completed the development and tested locally, next you want to build and 
 7. You will now see a summary of the pull request.  It will show that code is to be merged from `YOUR_GITHUB_ID/dev` to `YOUR_GITHUB_ID/main`.  Click the `Create` button.
 <img width="293" height="434" alt="image" src="https://github.com/user-attachments/assets/e03c8edc-a90e-42e8-b166-c16791f05410" />
 
-8. A new tab will open showing the created pull request.  EASeJ will not kick of a "Pull Request Build" to build and test the update.
+8. A new tab will open showing the created pull request.  EASeJ will now kick of a "Pull Request Build" to build and test the update.
 <img width="594" height="372" alt="image" src="https://github.com/user-attachments/assets/5f2c6841-9a94-4eaa-8e39-24902f341f61" />
 
+9. To view the pull-request build, in the EASeJ service UI, select the hamburger menu (top-left) and choose `Pull request builds`
+<img width="233" height="298" alt="image" src="https://github.com/user-attachments/assets/8a31d8dc-7860-486c-b949-0cfbd6fe9bda" />
+
+10. The page will show the pull-request build which may be in progress or completed
+<img width="860" height="264" alt="image" src="https://github.com/user-attachments/assets/e69b73e2-a492-4079-b92e-c640fe66edfe" />
+
+11. Click on the build id (1000) to view the pull request build details
+<img width="587" height="89" alt="image" src="https://github.com/user-attachments/assets/c60d8257-714b-4315-8ca6-1031dc34a3e2" />
+
+12. When the build is completed you'll be able to view the logs, tests results and downloads.  You should see that 4 tests were run, and that 3 passed and 1 was skipped.
+<img width="420" height="281" alt="image" src="https://github.com/user-attachments/assets/8ca0d686-9e5c-459e-a2c1-526ab70a33fc" />
+
+11. Click on `IBM Enterprise Application Service for Java" to go back to the EASeJ dashboard
+<img width="321" height="71" alt="image" src="https://github.com/user-attachments/assets/4f7f7b38-45af-4a1a-a27c-c040df197175" />
 
 # Merge pull-request to deliver, build, and test change - merge PR, go see the build, view test results, etc.
 
