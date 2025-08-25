@@ -345,15 +345,128 @@ git remote remove upstream
 3. Click on `Publish Branch` to publish the branch to GitHub.  Ignore the notification to create a pull request.
 <img width="419" height="216" alt="image" src="https://github.com/user-attachments/assets/c33d4159-534a-41f2-8dcb-270f213e6ac2" />
 
-# Merge pull-request to deploy to staging - merge PR, view deployment job, see results
+## Prepare to deploy release build to staging
 
-# Validate application working in staging - go to staging, see the instance, view the app.
+1. To deploy to staging, you need to set the version number in the staging `environment.yaml` to the version id of the release build to be deployed.  In the EASeJ Dashboard UI, scroll down to the `Release Builds` tile and select the left-most release build.  This is the one that was automatically run when you first configured the service instance.  A release build details page for the release build will open.
+<img width="453" height="427" alt="image" src="https://github.com/user-attachments/assets/2aecf573-03f6-411e-8625-b69730ede4be" />
 
-# (Optional) Update production config and create pull-request to validate - promote by copying version, update yaml, commit change, create PR, view config validation
+2. On the release build details page, click on `Deploy to staging`
+<img width="763" height="329" alt="image" src="https://github.com/user-attachments/assets/11b49dcc-b4a4-4561-a9d7-321d83406b33" />
 
-# (Optional) Merge pull-request to deploy to production - merge PR, view deployment job, see results
+3. A tear-sheet will display instructions on how to deploy the release to staging. EASeJ doesn't not have write access to the GitHub repositories because many users would not allow this, and so the step explain how a user can do this using their GitHub id.  The first step is to copy the version id.  Use the copy icon to do this
+<img width="807" height="332" alt="image" src="https://github.com/user-attachments/assets/5dc313da-8c43-4bd4-b84b-aa2e89210823" />
 
-# (Optional) Validate application working in production - go to production, see the instance, view the app.
+4. In VS Code for the `mod-resorts-cfg` repo, select the `Explorer`, expand `environments` -> `staging` and clock on `environment.yaml` to edit the file
+<img width="465" height="479" alt="image" src="https://github.com/user-attachments/assets/84a35df6-9dc1-4529-8b51-663c8a9228f9" />
+
+5. Past the version you copied earlier into the value for the version entry using `Ctrl-v`, then save the file using `Ctrl-s`
+<img width="593" height="271" alt="image" src="https://github.com/user-attachments/assets/339c5aa8-c88f-42e1-bb34-fd392ae5b8c9" />
+
+6. You've made the change, you now needs to push it to GitHub in the form of a pull-request.  Under `Source Control`, right click on the `environment.yaml` entry under Changes, and choose `Stage Changes`
+<img width="380" height="401" alt="image" src="https://github.com/user-attachments/assets/96da168c-1424-49be-954a-7c57df1e1187" />
+
+7. Choose the Commit pull-down menu and click on `Commit & Create Pull Request`, an COMMIT_EDITMSG tab should open
+<img width="595" height="335" alt="image" src="https://github.com/user-attachments/assets/0b17315c-bba1-4ad4-a763-487d318eb32a" />
+
+8. Enter a meaningful message into the `COMMIT_EDITMSG` editor and save with `Ctrl-s`, the close the tab by click on the `X`
+<img width="595" height="271" alt="image" src="https://github.com/user-attachments/assets/f7a8f43b-92be-4aba-a2e2-6bc833bd552e" />
+
+9. In the summary of the pull-request you're about to create, you will see that your `ops` branch is to be merged into the `main` branch of your fork.  Click the `Create` button to complete creation of the pull-request
+<img width="401" height="430" alt="image" src="https://github.com/user-attachments/assets/c183facf-006a-4d9d-8d44-1085012891c6" />
+
+10. A tab with a summary of your pull-request will open.  Keep this tab open, you'll use it later.
+<img width="1064" height="637" alt="image" src="https://github.com/user-attachments/assets/7fb7a782-e741-426e-80d0-f141ea5c8fb5" />
+
+11. In the EASeJ UI, click on the hamburger menu (top-left), and choose the `Config validations` menu option.
+<img width="242" height="377" alt="image" src="https://github.com/user-attachments/assets/26db9915-5e5e-4143-b89f-27d37df184e1" />
+
+12. You will see a config validation build summary.  You can click on it to view details.
+<img width="593" height="244" alt="image" src="https://github.com/user-attachments/assets/fd3d3d45-39c3-42d5-a5ad-9fcced196710" />
+
+
+## Merge pull-request to deploy to staging - merge PR, view deployment job, see results
+
+You've successful contributed the configuration update.  Next it will be merged into the main branch to start the staging deployment. 
+
+1. When the config validation build has completed successfully, go to the VS Code instances for `mod-resorts-cfg` and in the Pull Request tab, click `Merge Pull Request`
+<img width="592" height="353" alt="image" src="https://github.com/user-attachments/assets/a421b1b6-c52c-4dfa-bdf6-8239c59bb829" />
+
+2. A summary of your merge commit will appear.  click the `Create Merge Commit` button to complete the merge. Completion of the merge will start the deployment to staging
+<img width="593" height="260" alt="image" src="https://github.com/user-attachments/assets/72476b2f-bf74-4087-a621-9bcb7f6835c3" />
+
+3. To view the deployment job, go to the EASeJ Dashboard UI and scroll down to `Deployment jobs`.  Select the `Staging` option to see a summary of staging deployments.  A blue bar indicates a deployment in progress, and a green bar indicates a completed deployment.  You can hover over the base to see a summary and click on the bar to view details.
+<img width="725" height="273" alt="image" src="https://github.com/user-attachments/assets/803c671a-5a1a-4275-a94a-936ca18a6ca7" />
+
+## Validate application working in staging
+
+1. Once the deployment job has completed, scroll up in the EASeJ Dashboard UI to view the environments.  You will see that the application is running in staging.  
+<img width="836" height="159" alt="image" src="https://github.com/user-attachments/assets/d16376e5-b167-4678-a840-e4fab9bef9ea" />
+
+2. The summary shows the Release Build that's running, the Deployment job that performed the deployment, the number of instances (and max configured), and the status. Click on `View environment ->` to open the envrionment details page
+<img width="594" height="215" alt="image" src="https://github.com/user-attachments/assets/0bc35ff6-fc18-4e99-82ff-0325118078cd" />
+
+3. In the environment details page, you can see each intances that's running and the logs from those instances.  You can perform diagnostics (capture server dumps and trace logs), you can view integrations (these are connectivity to external logs/monitoring, Db2, MQ, etc), and lastly, initiate further actions.  Click on the `Actions` menu to see the options, then choose `Open application`
+<img width="813" height="272" alt="image" src="https://github.com/user-attachments/assets/9675e70c-d0ec-42b2-aa58-6dcaf20d9ed5" />
+
+4. You will see a new browser tab where the web application is loaded for you to try it out
+<img width="1473" height="604" alt="image" src="https://github.com/user-attachments/assets/40f2bef4-d3dc-46a4-b3f3-1f8fc946b9ec" />
+
+You've successfully deployed and validated the application in staging.  This completes the core part of the labs.  There are two bunus modules for you to try if you have time.
+
+# Bonus: capture diagnostics
+
+Some times if you have an issue and need to diagnose it, or engage with IBM Support, you might need to capture a server dump or diagnostics trace.  EASeJ has built-in support for both.  It also manages the resulting artefacts for you so you can download them when required.  Artefacts are retained for 1 month before being cleaned up.
+
+## Create a server dump
+
+1. From the Staging environment tile in the EASeJ Dashboard UI, select `View environment ->`
+<img width="598" height="216" alt="image" src="https://github.com/user-attachments/assets/5a7c29c0-fd9b-4951-8dcd-a2a97b680b86" />
+
+2. On the environment details page you can choose which instances to create a server dump from.  You probably only have one instance so it's automatically chosen.  Click `Start diagnostics`
+<img width="792" height="237" alt="image" src="https://github.com/user-attachments/assets/d81acb87-5a3a-4e42-bed4-2470b65b12b9" />
+
+3. In the resulting pop-up, choose `Server dump` followed by `Start`
+<img width="472" height="480" alt="image" src="https://github.com/user-attachments/assets/aba4e510-2ed4-49e7-8204-b6965dd1cfa9" />
+
+4. You will see a notification to say the server dump has started
+<img width="342" height="167" alt="image" src="https://github.com/user-attachments/assets/326c8f75-0fd6-4f25-aaa6-1518edcc293e" />
+
+5. Select the `Diagnostics` tab to view captured server dumps and traces.  These are displayed in a tables where you should see the server dump you just captured.  This tables allow you to download or delete the diagnostics.
+<img width="746" height="263" alt="image" src="https://github.com/user-attachments/assets/affb5a45-43e4-4ae3-bcca-63ea94cfb08b" />
+
+## Capture trace for the Web container
+
+1. From the Staging environment tile in the EASeJ Dashboard UI, select `View environment ->`
+<img width="598" height="216" alt="image" src="https://github.com/user-attachments/assets/5a7c29c0-fd9b-4951-8dcd-a2a97b680b86" />
+
+2. On the environment details page you can choose which instances to create a diagnostics trace from.  You probably only have one instance so it's automatically chosen.  Click `Start diagnostics`
+<img width="792" height="237" alt="image" src="https://github.com/user-attachments/assets/388c84b7-d344-4f8c-9515-124399ea08b8" />
+
+3. In the resulting pop-up, choose `Diagnostics trace` followed by `Start`
+<img width="471" height="477" alt="image" src="https://github.com/user-attachments/assets/8b9f7d43-ea6a-4a76-811b-5313af932d7b" />
+
+4. You now need to tell EASeJ what to trace.  Copy and paste the following into the `Trace specifications` field and click `Start`
+```
+*=info:com.ibm.ws.webcontainer*=all
+```
+<img width="435" height="445" alt="image" src="https://github.com/user-attachments/assets/bc3b3c9d-32f3-4d16-b937-d1085e5e69e0" />
+
+5. You will see a notification to say that trace has started and also an information bar allowing you to stop the trace
+<img width="827" height="170" alt="image" src="https://github.com/user-attachments/assets/dd81529a-7cfc-4942-9289-93ee065c26ed" />
+
+6. Click on the `Diagnostics` tab and choose `Diagnostics trace`.  This will show the table summarizing all diagnostics trace you've captured.  You will see a row with status `Running` to indicate the trace is on progress.  You also have an action in the table to stop the trace.  Click the `stop` action.
+<img width="870" height="305" alt="image" src="https://github.com/user-attachments/assets/c395836d-dc71-4d7e-8c0f-31192fa28331" />
+
+7. You will see a notification to say Trace has been successfully stopped, and the table will show that you can now download or delete the captured trace
+<img width="866" height="307" alt="image" src="https://github.com/user-attachments/assets/e50b8305-eee1-4ef7-b6d0-0449c01dd794" />
+
+
+# Bonus 2: deploy to production
+
+From what you learnt when deploying a release build to staging, so if you can work out how to deploy the same (or a different) release to the production environment. 
+
+Hint: you can follow exactly the same steps, but if you want some instructions, view the `Deploy to production` Action in the staging environment details page.
+
 
 # Party like it's 1999!
 
