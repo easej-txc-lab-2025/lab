@@ -79,7 +79,7 @@ Cloning the source and configuration repositories copies them to the Lab VM so y
 <img width="584" height="98" alt="image" src="https://github.com/user-attachments/assets/982c3bae-669a-4b85-9f75-93ff020d80ce" />
 
 5. Follow the step to authorize VS Code to access github under your github id, which end with this final confirmation.  Click `Authorize Visual-Studio-Code`
-<img width="342" height="35" alt="image" src="https://github.com/user-attachments/assets/ab46a671-b2f6-42e1-8f2f-0a79723903b7" />
+<img width="547" height="268" alt="image" src="https://github.com/user-attachments/assets/0fce8092-cc1b-4208-9cd8-2001965ba21f" />
 
 6. Select the `mod-resorts-src` repository from the list
 <img width="581" height="131" alt="image" src="https://github.com/user-attachments/assets/a002e222-7448-491d-bba1-4c57a65a82eb" />
