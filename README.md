@@ -33,16 +33,21 @@ In these steps you'll create the Mod Resorts source and configuration repositori
 
 ## Sign in to GitHub
 
-1. Log in to the Lab VM using using the `admin` id and the password provided by the instructors
-2. In a browser, sign in to the email account provided by the instructors at https://login.one.com/mail.  This will be used for 2-factor authentication when signing into GitHub
-3. In a second browser tab, sign into https://github.com with the ID provided by the instructors.  Use the code sent to the email account to complete the sign-in.
-4. In a terminal window, set the git user.name and user.password using the following commands:
-
-TODO: Work out if this is needed and where it goes.  It has to be after the OAuth login in VS Code....
-```
-git config --global user.name "YOUR GITHUB NAME"
-git config --global user.email "EMAILID@wweasej.com"
-```
+1. Log in to the Lab VM using using the `admin` id and the password provided by the instructors.
+2. Open the Firefox browser by clicking on `Activities` and choosing the Firefox icon:
+   ![Open browser](images/openbrowser.png)
+3. Sign in to the email account at <https://login.one.com/mail> with the the email and password provided for `one.com` by the instructors.  This will be used for 2-factor authentication when signing into GitHub.
+4. In a second browser tab, sign into GitHub at <https://github.com/> with the user ID and password provided for `github.com` by the instructors.  Use the code sent to the email account to complete the sign-in.
+5. Open the terminal by clicking on `Activities` and choosing the Terminal icon:
+   ![Open terminal](images/openterminal.png)
+6. Run the following command to set global Git configuration for the user name by replacing `YOUR GITHUB NAME` with the user ID provided for `github.com` by the instructors:
+   ```
+   git config --global user.name "YOUR GITHUB NAME"
+   ```
+6. Run the following command to set global Git configuration for the email by replacing `EMAILID@wweasej.com` with the email provided for `one.com` by the instructors:
+   ```
+   git config --global user.email "EMAILID@wweasej.com"
+   ```
 
 ## Fork the mod-resorts-src and mod-resorts-cfg repositories
 
@@ -78,7 +83,7 @@ Cloning the source and configuration repositories copies them to the Lab VM so y
 4. Enter the URL for the source repository into the command field - https://github.com/YOUR_GITHUB_ID/mod-resorts-src (remembering to replace `YOUR_GITHUB_ID` and choose `Clone from GitHub`
 <img width="584" height="98" alt="image" src="https://github.com/user-attachments/assets/982c3bae-669a-4b85-9f75-93ff020d80ce" />
 
-5. Follow the step to authorize VS Code to access github under your github id, which end with this final confirmation.  Click `Authorize Visual-Studio-Code`
+5. Follow the steps to authorize VS Code to access github under your github id, which ends with this final confirmation.  Click `Authorize Visual-Studio-Code`
 <img width="547" height="268" alt="image" src="https://github.com/user-attachments/assets/0fce8092-cc1b-4208-9cd8-2001965ba21f" />
 
 6. Select the `mod-resorts-src` repository from the list
@@ -167,21 +172,21 @@ Below that are Actions.  Actions are steps EASeJ recommends you take to ensure y
 
 <img width="571" height="286" alt="image" src="https://github.com/user-attachments/assets/d53dd0ad-ff99-45c8-9cc8-2469fbc219b6" />
 
-This action is just to help you get started with EASeJ so it not essential, but EASeJ Actions beyond this are strong recommendations. 
+This action is just to help you get started with EASeJ so it's not essential, but EASeJ Actions beyond this are strong recommendations. 
 
 Further down the page you will see the two built-in environments where the application runs; Production, and Staging.  They are in this order because Production is more important.  In fact, the whole Dashboard is ordered in this way.  We haven't deployed anything yet, so there's not a lot to see.
 
 <img width="597" height="145" alt="image" src="https://github.com/user-attachments/assets/29435fb5-25bb-42cd-8419-27bd1197d36d" />
 
-Scrolling down will show the `Deployment jobs`. These are the deployment pipeline jobs run to deploy a release build to staging or production.  By default, Production deployment jobs are show, but you can click `Staging` to switch to Staging.  Again, we haven't deployed anything so there's nothing to see.
+Scrolling down will show the `Deployment jobs`. These are the deployment pipeline jobs run to deploy a release build to staging or production.  By default, Production deployment jobs are shown, but you can click `Staging` to switch to Staging.  Again, we haven't deployed anything so there's nothing to see.
 
 <img width="597" height="216" alt="image" src="https://github.com/user-attachments/assets/44ac46d5-1d5c-471d-a30b-5389f719186e" />
 
-At the bottom of the dashboard are Release Builds.  EASeJ automatically starts a Release Build after initial setup using the contents of the source repository.  If the bar is blue, then the build is in progress.  Once successfully completed, the bar turns green.  Hoverring over the bar shows a summary of the build, including tests.
+At the bottom of the dashboard are Release Builds.  EASeJ automatically starts a Release Build after initial setup using the contents of the source repository.  If the bar is blue, then the build is in progress.  Once successfully completed, the bar turns green.  Hovering over the bar shows a summary of the build, including tests.
 
 <img width="597" height="326" alt="image" src="https://github.com/user-attachments/assets/69574339-9e67-4ed4-88e1-712024c06396" />
 
-Each Dashboard tile links to the details for the things it represents.  Also, clicking on the green (or blue) Release Build bar takes you to the Release Build details page.  One that page, you can view the build log, test results, and download the artefacts produced by the build.
+Each Dashboard tile links to the details for the things it represents.  Also, clicking on the green (or blue) Release Build bar takes you to the Release Build details page.  On that page, you can view the build log, test results, and download the artifacts produced by the build.
 
 <img width="599" height="276" alt="image" src="https://github.com/user-attachments/assets/d31102f3-4dee-4a11-b51a-5b607a1971f2" />
 
@@ -202,7 +207,7 @@ You'll see that there are more options displayed than are on the dashboard.  The
 * `Pull request builds`: view builds initiated by a pull request being created in the source repository
 * `Config validation`: view config validations initiated by a pull request being created in the configuration repository
 * `Secrets`: provides built-in secrets management.
-* `Integrations`: provides assitance in integration with Db2, MQ, on-premise systems, external logs and monoitoring.
+* `Integrations`: provides assistance in integration with Db2, MQ, on-premise systems, external logs and monitoring.
 * `Settings` (partially obscured at the bottom): shows service configuration information and enables updating, for example, repository integrations.
 
 
@@ -210,18 +215,18 @@ You'll see that there are more options displayed than are on the dashboard.  The
 
 ## Start Dev Mode and review the app
 
-You're now going to act as a developer for the application.  In this section, you'll develop and test a change locally, and in subsequent sections, you'll deliver the code and eventually deploy the updated application it to an environment.
+You're now going to act as a developer for the application.  In this section, you'll develop and test a change locally, and in subsequent sections, you'll deliver the code and eventually deploy the updated application to an environment.
 
-1. In your VS Code instance that's opened with the source code, open the `Explorer` view, if it's not already, and expand the `LIBERTY DASHBOARD` accordion.  You should see `moderesorts` listed.
+1. In your VS Code instance that's opened with the source code, open the `Explorer` view, if it's not already, and expand the `LIBERTY DASHBOARD` accordion.  You should see `moderesorts` listed. If you don't, click the small refresh button.
 <img width="345" height="491" alt="image" src="https://github.com/user-attachments/assets/db5449fb-5e96-4288-81f5-22ebbbddd3f8" />
 
-2. Right click on `modresorts` to bring up the context menu and choose `start`.  This will start Liberty locally in what is called `Dev Mode`.  Dev Mode makes it really quick and easy to develop applications because it does TODO....
+2. Right click on `modresorts` to bring up the context menu and choose `start`.  This will start Liberty locally in what is called `Dev Mode`.  Dev Mode makes it really quick and easy to develop applications because it immediately reflects changes made in the source code without a full rebuild.
 <img width="340" height="461" alt="image" src="https://github.com/user-attachments/assets/023582d0-9b19-47e8-9806-213f1334c93f" />
 
 3. In the terminal tab, you'll see a maven build runs that download and installs Liberty (just the features used by the app), builds the modresorts app, and then starts the server with the app deployed.  Once complete you should see a screen like this:
 <img width="959" height="276" alt="image" src="https://github.com/user-attachments/assets/406740b6-3b04-480c-b03f-07c2e7e53817" />
 
-4. Hovver over the URL in the message that begins with `Web application available...` and press `Ctrl-Click`.  This will bring up a dialog, choose `Open`.
+4. Hover over the URL in the message that begins with `Web application available...` and press `Ctrl-Click`.  This will bring up a dialog, choose `Open`.
 <img width="595" height="189" alt="image" src="https://github.com/user-attachments/assets/c71b92f3-75c1-4efc-98eb-2aab8ac75f24" />
 
 5. You will see the modresorts app load in a new browser tab.
@@ -236,8 +241,8 @@ When working in teams it's a best practice to use a code branch to keep your cha
 
 To make the next few steps a bit simpler, we're going to do them in the GitHub terminal.  
 
-1. Open the terminal by choose `View` > `Terminal`
-<img width="395" height="430" alt="image" src="https://github.com/user-attachments/assets/e27f59ba-52a5-4ab0-bccd-ff281f6fbc34" />
+1. The Terminal windows in VSCode is already open at the bottom, running the modresorts application. Clic the plus button to open a new tab of the Terminal and select the `*src` directory as the working directory:
+   ![New terminal tab](images/newterminaltab.png)
 
 2. In the terminal window, do the following commands:
 ```
@@ -254,13 +259,13 @@ git remote remove upstream
 
 You're now ready to update the application in your `dev` branch.
 
-1. In the VS Code IDE for mod-resorts-src, expand `WebContent` and click on `index.html` to open it for editing.  Scroll about of quarter of the way down the file to where the destinations are listed
+1. In the VS Code IDE for mod-resorts-src, expand `WebContent` and click on `index.html` to open it for editing.  Scroll about a quarter of the way down the file to where the destinations are listed:
 <img width="723" height="285" alt="image" src="https://github.com/user-attachments/assets/99580da4-2952-404b-a8f9-02d1c03b504f" />
 
 2. Add a new destination, e.g. `<option value="Orlando">Orlando, USA</option>` and save the file with `Ctrl-S`
 <img width="595" height="233" alt="image" src="https://github.com/user-attachments/assets/3caf06b1-2188-4fc9-b5b0-0179d281650b" />
 
-3. In the modresort browser tab, reload the page with `Ctrl-R` and expand `Where to?` to see the new destination.  Note, to make this update, all you did was modify the source.  You didn't have to run a new build, package the app, restart the server.  Dev Mod handled the update for you.  This was a static file change, but if it had been a Java change, Dev Mod would have handled it the same. It's that easy.
+3. In the modresort browser tab, reload the page with `Ctrl-R` and expand `Where to?` to see the new destination.  Note, to make this update, all you did was modify the source.  You didn't have to run a new build, package the app, restart the server.  Dev Mode handled the update for you.  This was a static file change, but if it had been a Java change, Dev Mode would have handled it the same. It's that easy.
 <img width="315" height="376" alt="image" src="https://github.com/user-attachments/assets/e3f1c807-8db0-4769-ade8-6121e3f95213" />
 
 # Create a pull-request to build and test in EASeJ
@@ -308,7 +313,7 @@ You've completed the development and tested locally, next you want to build and 
 
 # Merge pull-request to deliver, build, and test change - merge PR, go see the build, view test results, etc.
 
-Your code changes built and passed the tests in EASeJ so it's time to merge the pull request into the main code branch.  A developer would typicall get a peer or team lead to review the pull request and merge it, but in this lab, you'll merge your own pull request.
+Your code changes built and passed the tests in EASeJ so it's time to merge the pull request into the main code branch.  A developer would typically get a peer or team lead to review the pull request and merge it, but in this lab, you'll merge your own pull request.
 
 1. In the VS Code tab for the pull-request, scroll down and click the `Merge Pull Request` button
 <img width="594" height="432" alt="image" src="https://github.com/user-attachments/assets/bd884a60-9252-49d3-8736-3a09319497e5" />
@@ -322,7 +327,7 @@ Your code changes built and passed the tests in EASeJ so it's time to merge the 
 4. Click on the Release Build bar to view the details.  When the build is complete, you can view the logs, test results, and downloads.  Release builds have more artefacts available, including a SLSA provenance file that describes the application Bill of Materials (BOM).  This is useful when trying to determine if the applications is affected by a supply-chain injection attack.
 <img width="473" height="228" alt="image" src="https://github.com/user-attachments/assets/d1704ca6-00c7-417a-82a5-4912559a687d" />
 
-You've successfully contributed an update to the application. Next you'll deploy the new release build to the EAseJ Staging environment to verify that it's all working and ready for Production.
+You've successfully contributed an update to the application. Next you'll deploy the new release build to the EASeJ Staging environment to verify that it's all working and ready for Production.
 
 # Deploy the release to Staging
 
@@ -353,16 +358,16 @@ git remote remove upstream
 2. On the release build details page, click on `Deploy to staging`
 <img width="763" height="329" alt="image" src="https://github.com/user-attachments/assets/11b49dcc-b4a4-4561-a9d7-321d83406b33" />
 
-3. A tear-sheet will display instructions on how to deploy the release to staging. EASeJ doesn't not have write access to the GitHub repositories because many users would not allow this, and so the step explain how a user can do this using their GitHub id.  The first step is to copy the version id.  Use the copy icon to do this
+3. A tear-sheet will display instructions on how to deploy the release to staging. EASeJ doesn't not have write access to the GitHub repositories because many users would not allow this, and so the step explains how a user can do this using their GitHub id.  The first step is to copy the version id.  Use the copy icon to do this
 <img width="807" height="332" alt="image" src="https://github.com/user-attachments/assets/5dc313da-8c43-4bd4-b84b-aa2e89210823" />
 
-4. In VS Code for the `mod-resorts-cfg` repo, select the `Explorer`, expand `environments` -> `staging` and clock on `environment.yaml` to edit the file
+4. In VS Code for the `mod-resorts-cfg` repo, select the `Explorer`, expand `environments` -> `staging` and click on `environment.yaml` to edit the file
 <img width="465" height="479" alt="image" src="https://github.com/user-attachments/assets/84a35df6-9dc1-4529-8b51-663c8a9228f9" />
 
 5. Past the version you copied earlier into the value for the version entry using `Ctrl-v`, then save the file using `Ctrl-s`
 <img width="593" height="271" alt="image" src="https://github.com/user-attachments/assets/339c5aa8-c88f-42e1-bb34-fd392ae5b8c9" />
 
-6. You've made the change, you now needs to push it to GitHub in the form of a pull-request.  Under `Source Control`, right click on the `environment.yaml` entry under Changes, and choose `Stage Changes`
+6. You've made the change, you now need to push it to GitHub in the form of a pull-request.  Under `Source Control`, right click on the `environment.yaml` entry under Changes, and choose `Stage Changes`
 <img width="380" height="401" alt="image" src="https://github.com/user-attachments/assets/96da168c-1424-49be-954a-7c57df1e1187" />
 
 7. Choose the Commit pull-down menu and click on `Commit & Create Pull Request`, an COMMIT_EDITMSG tab should open
@@ -391,10 +396,10 @@ You've successful contributed the configuration update.  Next it will be merged 
 1. When the config validation build has completed successfully, go to the VS Code instances for `mod-resorts-cfg` and in the Pull Request tab, click `Merge Pull Request`
 <img width="592" height="353" alt="image" src="https://github.com/user-attachments/assets/a421b1b6-c52c-4dfa-bdf6-8239c59bb829" />
 
-2. A summary of your merge commit will appear.  click the `Create Merge Commit` button to complete the merge. Completion of the merge will start the deployment to staging
+2. A summary of your merge commit will appear.  Click the `Create Merge Commit` button to complete the merge. Completion of the merge will start the deployment to staging
 <img width="593" height="260" alt="image" src="https://github.com/user-attachments/assets/72476b2f-bf74-4087-a621-9bcb7f6835c3" />
 
-3. To view the deployment job, go to the EASeJ Dashboard UI and scroll down to `Deployment jobs`.  Select the `Staging` option to see a summary of staging deployments.  A blue bar indicates a deployment in progress, and a green bar indicates a completed deployment.  You can hover over the base to see a summary and click on the bar to view details.
+3. To view the deployment job, go to the EASeJ home page and scroll down to `Deployment jobs`.  Select the `Staging` option to see a summary of staging deployments.  A blue bar indicates a deployment in progress, and a green bar indicates a completed deployment.  You can hover over the base to see a summary and click on the bar to view details.
 <img width="725" height="273" alt="image" src="https://github.com/user-attachments/assets/803c671a-5a1a-4275-a94a-936ca18a6ca7" />
 
 ## Validate application working in staging
@@ -405,17 +410,17 @@ You've successful contributed the configuration update.  Next it will be merged 
 2. The summary shows the Release Build that's running, the Deployment job that performed the deployment, the number of instances (and max configured), and the status. Click on `View environment ->` to open the envrionment details page
 <img width="594" height="215" alt="image" src="https://github.com/user-attachments/assets/0bc35ff6-fc18-4e99-82ff-0325118078cd" />
 
-3. In the environment details page, you can see each intances that's running and the logs from those instances.  You can perform diagnostics (capture server dumps and trace logs), you can view integrations (these are connectivity to external logs/monitoring, Db2, MQ, etc), and lastly, initiate further actions.  Click on the `Actions` menu to see the options, then choose `Open application`
+3. In the environment details page, you can see each intance that's running and the logs from those instances.  You can perform diagnostics (capture server dumps and trace logs), you can view integrations (these are connectivity to external logs/monitoring, Db2, MQ, etc), and lastly, initiate further actions.  Click on the `Actions` menu to see the options, then choose `Open application`
 <img width="813" height="272" alt="image" src="https://github.com/user-attachments/assets/9675e70c-d0ec-42b2-aa58-6dcaf20d9ed5" />
 
 4. You will see a new browser tab where the web application is loaded for you to try it out
 <img width="1473" height="604" alt="image" src="https://github.com/user-attachments/assets/40f2bef4-d3dc-46a4-b3f3-1f8fc946b9ec" />
 
-You've successfully deployed and validated the application in staging.  This completes the core part of the labs.  There are two bunus modules for you to try if you have time.
+You've successfully deployed and validated the application in staging.  This completes the core part of the lab.  There are two bunus modules for you to try if you have time.
 
 # Bonus: capture diagnostics
 
-Some times if you have an issue and need to diagnose it, or engage with IBM Support, you might need to capture a server dump or diagnostics trace.  EASeJ has built-in support for both.  It also manages the resulting artefacts for you so you can download them when required.  Artefacts are retained for 1 month before being cleaned up.
+Sometimes if you have an issue and need to diagnose it, or engage with IBM Support, you might need to capture a server dump or diagnostics trace.  EASeJ has built-in support for both.  It also manages the resulting artefacts for you so you can download them when required.  Artefacts are retained for 1 month before being cleaned up.
 
 ## Create a server dump
 
@@ -431,7 +436,7 @@ Some times if you have an issue and need to diagnose it, or engage with IBM Supp
 4. You will see a notification to say the server dump has started
 <img width="342" height="167" alt="image" src="https://github.com/user-attachments/assets/326c8f75-0fd6-4f25-aaa6-1518edcc293e" />
 
-5. Select the `Diagnostics` tab to view captured server dumps and traces.  These are displayed in a tables where you should see the server dump you just captured.  This tables allow you to download or delete the diagnostics.
+5. Select the `Diagnostics` tab to view captured server dumps and traces.  These are displayed in a table where you should see the server dump you just captured.  This table allow you to download or delete the diagnostics.
 <img width="746" height="263" alt="image" src="https://github.com/user-attachments/assets/affb5a45-43e4-4ae3-bcca-63ea94cfb08b" />
 
 ## Capture trace for the Web container
@@ -439,7 +444,7 @@ Some times if you have an issue and need to diagnose it, or engage with IBM Supp
 1. From the Staging environment tile in the EASeJ Dashboard UI, select `View environment ->`
 <img width="598" height="216" alt="image" src="https://github.com/user-attachments/assets/5a7c29c0-fd9b-4951-8dcd-a2a97b680b86" />
 
-2. On the environment details page you can choose which instances to create a diagnostics trace from.  You probably only have one instance so it's automatically chosen.  Click `Start diagnostics`
+2. On the environment details page you can choose which instances to create a diagnostics trace on.  You probably only have one instance so it's automatically chosen.  Click `Start diagnostics`
 <img width="792" height="237" alt="image" src="https://github.com/user-attachments/assets/388c84b7-d344-4f8c-9515-124399ea08b8" />
 
 3. In the resulting pop-up, choose `Diagnostics trace` followed by `Start`
@@ -454,7 +459,7 @@ Some times if you have an issue and need to diagnose it, or engage with IBM Supp
 5. You will see a notification to say that trace has started and also an information bar allowing you to stop the trace
 <img width="827" height="170" alt="image" src="https://github.com/user-attachments/assets/dd81529a-7cfc-4942-9289-93ee065c26ed" />
 
-6. Click on the `Diagnostics` tab and choose `Diagnostics trace`.  This will show the table summarizing all diagnostics trace you've captured.  You will see a row with status `Running` to indicate the trace is on progress.  You also have an action in the table to stop the trace.  Click the `stop` action.
+6. Click on the `Diagnostics` tab and choose `Diagnostics trace`.  This will show the table summarizing all diagnostics trace you've captured.  You will see a row with status `Running` to indicate the trace is in progress.  You also have an action in the table to stop the trace.  Click the `stop` action.
 <img width="870" height="305" alt="image" src="https://github.com/user-attachments/assets/c395836d-dc71-4d7e-8c0f-31192fa28331" />
 
 7. You will see a notification to say Trace has been successfully stopped, and the table will show that you can now download or delete the captured trace
@@ -463,7 +468,7 @@ Some times if you have an issue and need to diagnose it, or engage with IBM Supp
 
 # Bonus 2: deploy to production
 
-From what you learnt when deploying a release build to staging, so if you can work out how to deploy the same (or a different) release to the production environment. 
+From what you learnt when deploying a release build to staging, see if you can work out how to deploy the same (or a different) release to the production environment. 
 
 Hint: you can follow exactly the same steps, but if you want some instructions, view the `Deploy to production` Action in the staging environment details page.
 
