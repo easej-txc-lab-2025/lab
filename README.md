@@ -241,7 +241,7 @@ When working in teams it's a best practice to use a code branch to keep your cha
 
 To make the next few steps a bit simpler, we're going to do them in the GitHub terminal.  
 
-1. The Terminal windows in VSCode is already open at the bottom, running the modresorts application. Clic the plus button to open a new tab of the Terminal and select the `*src` directory as the working directory:
+1. The Terminal windows in VSCode is already open at the bottom, running the modresorts application. Click the plus button to open a new tab of the Terminal and select the `*src` directory as the working directory:
    ![New terminal tab](images/newterminaltab.png)
 
 2. In the terminal window, do the following commands:
@@ -399,7 +399,7 @@ You've successful contributed the configuration update.  Next it will be merged 
 2. A summary of your merge commit will appear.  Click the `Create Merge Commit` button to complete the merge. Completion of the merge will start the deployment to staging
 <img width="593" height="260" alt="image" src="https://github.com/user-attachments/assets/72476b2f-bf74-4087-a621-9bcb7f6835c3" />
 
-3. To view the deployment job, go to the EASeJ home page and scroll down to `Deployment jobs`.  Select the `Staging` option to see a summary of staging deployments.  A blue bar indicates a deployment in progress, and a green bar indicates a completed deployment.  You can hover over the base to see a summary and click on the bar to view details.
+3. To view the deployment job, go to the EASeJ Dashboard and scroll down to `Deployment jobs`.  Select the `Staging` option to see a summary of staging deployments.  A blue bar indicates a deployment in progress, and a green bar indicates a completed deployment.  You can hover over the base to see a summary and click on the bar to view details.
 <img width="725" height="273" alt="image" src="https://github.com/user-attachments/assets/803c671a-5a1a-4275-a94a-936ca18a6ca7" />
 
 ## Validate application working in staging
