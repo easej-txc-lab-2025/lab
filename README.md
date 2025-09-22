@@ -1,6 +1,7 @@
 # Enterprise Application Service for Java TechXchange 2025 Lab
 
-<img width="612" height="792" alt="image" src="https://github.com/user-attachments/assets/8fd693e7-7746-402e-97c6-b58d23be8b39" />
+<img width="921" height="320" alt="image" src="https://github.com/user-attachments/assets/d1e9bc84-e876-49e1-8fab-1b9e9d219fad" />
+
 
 # Get your lab IDs
 
