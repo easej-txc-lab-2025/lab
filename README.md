@@ -1,23 +1,7 @@
 # Enterprise Application Service for Java TechXchange 2025 Lab
 
-# Lab Structure
+<img width="612" height="792" alt="image" src="https://github.com/user-attachments/assets/8fd693e7-7746-402e-97c6-b58d23be8b39" />
 
-Source repos prepopulated with mod-resorts
-Config repo prepopulated with Staging and Production environment yamls.
-
-IBM Cloud Logs - Need cloud credits (no work for the people to do).  Monitoring is more problemmatic.  
-
-0. Intro slides to EASeJ - 10m
-0.1 Install EASeJ Tools - 10m - need to check if it will be feasible for us to install the night before
-
-# Install the EASeJ Tools _beta_
-
-The EASeJ Tools Beta was released after the lab VM was created, so we first need to install the tools.
-
-TODO: Add the steps
-
-1. 
-   
 # Get your lab IDs
 
 Each student will be provided with the following:
@@ -358,13 +342,13 @@ git remote remove upstream
 2. On the release build details page, click on `Deploy to staging`
 <img width="763" height="329" alt="image" src="https://github.com/user-attachments/assets/11b49dcc-b4a4-4561-a9d7-321d83406b33" />
 
-3. A tear-sheet will display instructions on how to deploy the release to staging. EASeJ doesn't not have write access to the GitHub repositories because many users would not allow this, and so the step explains how a user can do this using their GitHub id.  The first step is to copy the version id.  Use the copy icon to do this
+3. A tear-sheet will display instructions on how to deploy the release to staging. EASeJ doesn't have write access to the GitHub repositories because many users would not allow this, and so the step explains how a user can do this using their GitHub id.  The first step is to copy the version id.  Use the copy icon to do this.
 <img width="807" height="332" alt="image" src="https://github.com/user-attachments/assets/5dc313da-8c43-4bd4-b84b-aa2e89210823" />
 
 4. In VS Code for the `mod-resorts-cfg` repo, select the `Explorer`, expand `environments` -> `staging` and click on `environment.yaml` to edit the file
 <img width="465" height="479" alt="image" src="https://github.com/user-attachments/assets/84a35df6-9dc1-4529-8b51-663c8a9228f9" />
 
-5. Past the version you copied earlier into the value for the version entry using `Ctrl-v`, then save the file using `Ctrl-s`
+5. Paste the version id you copied earlier into the value for the version entry using `Ctrl-v`, then save the file using `Ctrl-s`
 <img width="593" height="271" alt="image" src="https://github.com/user-attachments/assets/339c5aa8-c88f-42e1-bb34-fd392ae5b8c9" />
 
 6. You've made the change, you now need to push it to GitHub in the form of a pull-request.  Under `Source Control`, right click on the `environment.yaml` entry under Changes, and choose `Stage Changes`
@@ -399,7 +383,7 @@ You've successful contributed the configuration update.  Next it will be merged 
 2. A summary of your merge commit will appear.  Click the `Create Merge Commit` button to complete the merge. Completion of the merge will start the deployment to staging
 <img width="593" height="260" alt="image" src="https://github.com/user-attachments/assets/72476b2f-bf74-4087-a621-9bcb7f6835c3" />
 
-3. To view the deployment job, go to the EASeJ Dashboard and scroll down to `Deployment jobs`.  Select the `Staging` option to see a summary of staging deployments.  A blue bar indicates a deployment in progress, and a green bar indicates a completed deployment.  You can hover over the base to see a summary and click on the bar to view details.
+3. To view the deployment job, go to the EASeJ Dashboard and scroll down to `Deployment jobs`.  Select the `Staging` option to see a summary of staging deployments.  A blue bar indicates a deployment in progress, and a green bar indicates a completed deployment.  You can hover over the bar to see a summary and click on the bar to view details.
 <img width="725" height="273" alt="image" src="https://github.com/user-attachments/assets/803c671a-5a1a-4275-a94a-936ca18a6ca7" />
 
 ## Validate application working in staging
@@ -407,7 +391,7 @@ You've successful contributed the configuration update.  Next it will be merged 
 1. Once the deployment job has completed, scroll up in the EASeJ Dashboard UI to view the environments.  You will see that the application is running in staging.  
 <img width="836" height="159" alt="image" src="https://github.com/user-attachments/assets/d16376e5-b167-4678-a840-e4fab9bef9ea" />
 
-2. The summary shows the Release Build that's running, the Deployment job that performed the deployment, the number of instances (and max configured), and the status. Click on `View environment ->` to open the envrionment details page
+2. The summary shows the Release Build that's running, the Deployment job that performed the deployment, the number of instances (and max configured), and the status. Click on `View environment ->` to open the environment details page
 <img width="594" height="215" alt="image" src="https://github.com/user-attachments/assets/0bc35ff6-fc18-4e99-82ff-0325118078cd" />
 
 3. In the environment details page, you can see each intance that's running and the logs from those instances.  You can perform diagnostics (capture server dumps and trace logs), you can view integrations (these are connectivity to external logs/monitoring, Db2, MQ, etc), and lastly, initiate further actions.  Click on the `Actions` menu to see the options, then choose `Open application`
